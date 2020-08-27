@@ -1,0 +1,15 @@
+{
+  "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+  "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "FiraCode Nerd Font Mono",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 100,
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.toml": "toml"
+  },
+  "plantuml.server": "http://localhost:8080",
+  "plantuml.render": "PlantUMLServer",
+  "workbench.startupEditor": "newUntitledFile"
+}
