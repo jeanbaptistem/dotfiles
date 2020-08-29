@@ -108,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+alias ls="lsd"
 alias grep=ack
 alias python="python3"
 alias config="code $HOME/.zshrc"
