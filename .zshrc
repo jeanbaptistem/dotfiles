@@ -116,3 +116,8 @@ alias pconfig="code $HOME/.p10k.zsh"
 alias projects="cd $HOME/Projects"
 alias reload="source $HOME/.zshrc"
 alias cls="clear"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/jeanbaptistem/.sdkman"
+[[ -s "/home/jeanbaptistem/.sdkman/bin/sdkman-init.sh" ]] && source "/home/jeanbaptistem/.sdkman/bin/sdkman-init.sh"
+
