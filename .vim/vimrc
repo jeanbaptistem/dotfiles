@@ -1,13 +1,14 @@
-" VIM configuration - jeanbaptistem
+" Author:	Jean-Baptiste Mesnil <jeanbaptistem>
+" Description:	Personal configuration file for vim
 
-" Activation de pathogen
+"  Annule la compatibilite avec l’ancetre Vi
+set nocompatible
+
+"  Activation de pathogen
 call pathogen#infect()
 
-" Charge la config par default de vim
+"  Charge la config par default de vim
 source /etc/vim/vimrc
-
-" Annule la compatibilite avec l’ancetre Vi
-set nocompatible
 
 " -- Affichage
 set title                   " Met a jour le titre de votre fenetre ou de
@@ -32,20 +33,56 @@ set path+=**                " Permet la recherche dans les sous dossiers
 set visualbell              " Empeche Vim de beeper
 set noerrorbells            " Empeche Vim de beeper
 
-" Active le comportement ’habituel’ de la touche retour en arriere
+"  Active le comportement ’habituel’ de la touche retour en arriere
 set backspace=indent,eol,start
 
-" Cache les fichiers lors de l’ouverture d’autres fichiers
+"  Cache les fichiers lors de l’ouverture d’autres fichiers
 set hidden
 
 " -- Coloration syntaxique
 syntax on                    " Active la coloration syntaxique
 filetype plugin indent on
-colorscheme monokai          " Utilise monokai comme color scheme
 set background=dark
+colorscheme monokai          " Utilise monokai comme color scheme
+let g:airline_theme='luna'
 
-" -- Plugins
+" -- Plugin
+"  Toogle NERDTre with Crtl+n
+map <C-n> :NERDTreeToggle<CR>
+"  Close Vim if the only window left is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"  Avoid open files in NERTree window
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+"  Show dotfiles
+let NERDTreeShowHidden=1
 
+"  Use NerdFont for NERDTree git plugin
+let g:NERDTreeGitStatusUseNerdFonts=1
 
-" -- Key maping
+"  Vim Airline config
+"  Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+"  Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+"  Use NerdFont with vim airline
+let g:airline_powerline_fonts = 1
+
+" -- Mapping
 let mapleader=","
+
+"  To open a new empty buffer
+"  This replaces :tabnew which I used to bind to this mapping
+nmap <leader>t :enew<cr>
+
+"  Move to the next buffer
+nmap <leader>n :bnext<CR>
+
+"  Move to the previous buffer
+nmap <leader>p :bprevious<CR>
+
+"  Close the current buffer and move to the previous one
+"  This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
