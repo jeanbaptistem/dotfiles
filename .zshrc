@@ -104,18 +104,17 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source ~/.bash_aliases
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias ls="lsd"
-alias grep=ack
-alias python="python3"
-alias config="code $HOME/.zshrc"
-alias pconfig="code $HOME/.p10k.zsh"
-alias projects="cd $HOME/Projects"
-alias reload="source $HOME/.zshrc"
-alias cls="clear"
+export PATH="/home/jeanbaptistem/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+export BROWSER='wslview'
+export EDITOR='code'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/jeanbaptistem/.sdkman"

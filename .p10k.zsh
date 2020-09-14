@@ -91,20 +91,20 @@
     vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
     # vpn_ip                # virtual private network indicator
     load                  # CPU load
-    # disk_usage            # disk usage
+    disk_usage            # disk usage
     ram                   # free RAM
-    # swap                  # used swap
+    swap                  # used swap
+    # =========================[ Line #2 ]=========================
+    newline                 # \n
     todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
     timewarrior             # timewarrior tracking status (https://timewarrior.net/)
     taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
-    time                    # current time
-    # =========================[ Line #2 ]=========================
-    newline                 # \n
-    ip                    # ip address and bandwidth usage for a specified network interface
+    # ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
     battery               # internal battery
-    wifi                  # wifi speed
+    # wifi                  # wifi speed
+    time                    # current time
     # example               # example user-defined segment (see prompt_example function below)
   )
 
@@ -1461,7 +1461,6 @@
   typeset -g POWERLEVEL9K_BATTERY_STAGES='\uf58d\uf579\uf57a\uf57b\uf57c\uf57d\uf57e\uf57f\uf580\uf581\uf578'
   # Don't show the remaining time to charge/discharge.
   typeset -g POWERLEVEL9K_BATTERY_VERBOSE=false
-
   #####################################[ wifi: wifi speed ]#####################################
   # WiFi color.
   typeset -g POWERLEVEL9K_WIFI_FOREGROUND=68
